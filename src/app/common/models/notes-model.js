@@ -8,31 +8,31 @@ angular.module('ang08.common')
       return result.data;
     }
 
-    function getUrl(boardId) {
-      return ENDPOINT_URI + 'users/' + UserModel.getCurrentUser() + '/boards/' + boardId + '/notes.json';
+    function getUrl(seriesId) {
+      return ENDPOINT_URI + 'users/' + UserModel.getCurrentUser() + '/series/' + seriesId + '/notes.json';
     }
 
-    function getUrlForId(boardId, noteId) {
-      return ENDPOINT_URI + 'users/' + UserModel.getCurrentUser() + '/boards/' + boardId + '/notes/' + noteId + '.json'
+    function getUrlForId(seriesId, noteId) {
+      return ENDPOINT_URI + 'users/' + UserModel.getCurrentUser() + '/series/' + seriesId + '/notes/' + noteId + '.json'
     }
 
-    service.all = function (boardId) {
-      return $http.get(getUrl(boardId)).then(extract);
+    service.all = function (seriesId) {
+      return $http.get(getUrl(seriesId)).then(extract);
     };
 
-    service.fetch = function (boardId, noteId) {
-      return $http.get(getUrlForId(boardId, noteId)).then(extract);
+    service.fetch = function (seriesId, noteId) {
+      return $http.get(getUrlForId(seriesId, noteId)).then(extract);
     };
 
-    service.create = function (boardId, note) {
-      return $http.post(getUrl(boardId), note).then(extract);
+    service.create = function (seriesId, note) {
+      return $http.post(getUrl(seriesId), note).then(extract);
     };
 
-    service.update = function (boardId, noteId, note) {
-      return $http.put(getUrlForId(boardId, noteId), note).then(extract);
+    service.update = function (seriesId, noteId, note) {
+      return $http.put(getUrlForId(seriesId, noteId), note).then(extract);
     };
 
-    service.destroy = function (boardId, noteId) {
-      return $http.delete(getUrlForId(boardId, noteId)).then(extract);
+    service.destroy = function (seriesId, noteId) {
+      return $http.delete(getUrlForId(seriesId, noteId)).then(extract);
     };
   });

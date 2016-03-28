@@ -28,7 +28,6 @@
     <!-- CREATING -->
     <div ng-if="!ctrl.isEditing" class="col-xs-12 series-details">
         <h3>Create a New Series</h3>
-        <hr/>
         <form
                 name="ctrl.createForm"
                 class="create-form"
@@ -78,7 +77,7 @@
 
             <button
                     type="submit"
-                    class="btn btn-info btn-lg"
+                    class="btn btn-info btn-lg" style="margin-bottom: 6px"
                     ng-disabled="ctrl.loading">
                 Create
                 <span ng-show="ctrl.loading" class="glyphicon glyphicon-refresh"></span>
@@ -88,7 +87,6 @@
     <!-- EDITING -->
     <div ng-if="ctrl.isEditing" class="col-xs-12 series-details">
         <h3>Editing {{ ctrl.editedSeries.title }}</h3>
-        <hr/>
         <form
                 name="ctrl.updateForm"
                 class="edit-form"
@@ -138,7 +136,7 @@
 
             <button
                     type="submit"
-                    class="btn btn-info btn-lg"
+                    class="btn btn-info btn-lg" style="margin-bottom: 6px"
                     ng-disabled="ctrl.loading">
                 Save
                 <span ng-show="ctrl.loading" class="glyphicon glyphicon-refresh"></span>

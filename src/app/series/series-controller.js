@@ -4,8 +4,6 @@ angular.module('ang08')
     .controller('SeriesCtrl', function (currentUser, SeriesModel) {
         var ctrl = this;
 
-        console.log("SeriesCtrl");
-
         ctrl.loading = false;
 
         ctrl.newSeries = {

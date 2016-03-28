@@ -5,19 +5,6 @@ angular.module('ang08')
     var main = this;
     main.auth = Auth;
     main.currentUser = null;
-    main.currentColor = 'blue';
-
-    main.colors = [
-      'blue',
-      'green',
-      'orange',
-      'red',
-      'yellow'
-    ];
-
-    main.setCurrentColor = function(color) {
-      main.currentColor = color;
-    };
 
     main.logout = function () {
       UserModel.logout();
