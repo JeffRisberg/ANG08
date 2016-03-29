@@ -17,7 +17,7 @@ angular.module('ang08', [
             })
             .state('seriesList', {
                 url: '/seriesList',
-                templateUrl: 'app/series/series.tmpl.html',
+                templateUrl: 'app/series/seriesList.tmpl.html',
                 controller: 'SeriesCtrl',
                 controllerAs: 'ctrl',
                 resolve: {

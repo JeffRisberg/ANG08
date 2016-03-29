@@ -96,5 +96,22 @@ angular.module('ang08')
         };
 
         ctrl.getSeriesList();
+    })
+    .directive('series', function(){
+
+        var linker = function (scope, element, attr) {
+            $(element).hover(
+             function() {
+                $( this ).children('.simple-series').css( 'opacity', '0.5' );
+             }, function() {
+                $( this ).children('.simple-series').css( 'opacity', '1.0' );
+             }
+            );
+        };
+
+        return {
+            link: linker,
+            templateUrl: 'app/series/series.tmpl.html'
+        }
     });
 
