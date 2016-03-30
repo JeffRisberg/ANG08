@@ -26,6 +26,17 @@ angular.module('ang08', [
                     }]
                 }
             })
+            .state('notes', {
+                url: '/series/:seriesId/notes',
+                templateUrl: 'app/series/notes/notes.tmpl.html',
+                controller: 'NotesCtrl',
+                controllerAs: 'ctrl',
+                resolve: {
+                    'currentUser': ['Auth', function (Auth) {
+                        return Auth.$requireAuth();
+                    }]
+                }
+            })
         ;
     })
     .run(function ($rootScope, $state) {
